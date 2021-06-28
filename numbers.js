@@ -417,3 +417,26 @@ function twoSum(numbers, target) {
 
 console.log(twoSum([1, 2, 3], 4));
 console.log(twoSum([3, 2, 4], 6));
+//____________________________________________________________________________________________________________
+
+// 9
+function getDivisorsCnt(n){
+	let result = [];
+	for (let i = 0; i <= n; i++) {
+		if (n % i === 0) {
+			result.push(i)
+		}
+	} 
+	return result.length;
+}
+
+// other solution
+function getDivisorsCntO1(n) {
+  for (var d = 0, i = n; i > 0; i--) {
+    if (n % i == 0) d++;
+  }
+  
+  return d;
+}
+console.log(getDivisorsCnt(4));
+console.log(getDivisorsCnt(5));
