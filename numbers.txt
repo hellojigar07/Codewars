@@ -1,0 +1,41 @@
+
+NUMBER QUESTIONS FOR ALL THE NUMBER CODING CHALLANGE
+
+1.  Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result. It should remove all values from list a, which are present in list b.
+
+2. Welcome. In this kata, you are asked to square every digit of a number and concatenate them. For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1. 
+Note: The function accepts an integer and returns an integer
+
+3. We need a function that can transform a string into a number. What ways of achieving this do you know?
+
+4. Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers.
+	If the input array is empty or null, return an empty array.
+
+5. There is an array with some numbers. All numbers are equal except for one. Try to find it!
+It’s guaranteed that array contains at least 3 numbers. The tests contain some very huge arrays, so think about performance.  
+
+6. This time we want to write calculations using functions and get the results. Let's have a look at some examples:
+
+seven(times(five())); // must return 35
+four(plus(nine())); // must return 13
+eight(minus(three())); // must return 5
+six(dividedBy(two())); // must return 3
+Requirements:
+
+There must be a function for each number from 0 ("zero") to 9 ("nine")
+There must be a function for each of the following mathematical operations: plus, minus, times, dividedBy (divided_by in Ruby and Python)
+Each calculation consist of exactly one operation and two numbers
+The most outer function represents the left operand, the most inner function represents the right operand
+Division should be integer division. For example, this should return 2, not 2.666666...:
+
+7. 	Given two integers a and b, which can be positive or negative, find the sum of all the integers between including them too and return it. If the two numbers are equal return a or b.
+Note: a and b are not ordered!
+
+8. Write a function that takes an array of numbers (integers for the tests) and a target number. It should find two different items in the array that, when added together, give the target value. The indices of these items should then be returned in a tuple like so: (index1, index2).
+
+For the purposes of this kata, some tests may have multiple answers; any valid solutions will be accepted.
+
+The input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array).
+
+Based on: http://oj.leetcode.com/problems/two-sum/
+
