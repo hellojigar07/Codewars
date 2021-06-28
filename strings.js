@@ -56,3 +56,46 @@ console.log(titleCaseStudy("a clash of KINGS", "a an the of"));
 const a = [1, 2, 3, 4, 5];
 console.log(a.indexOf(4));
 
+
+// 3
+function dirReduc(arr) {
+	const result = []
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === "NORTH" && arr[i + 1] === "SOUTH" || arr[i] === "SOUTH" && arr[i + 1] === "NORTH" || arr[i] === "EAST" && arr[i + 1] === "WEST" || arr[i] === "WEST" && arr[i + 1] === "EAST"){
+            i++
+        } else {
+            if(result[result.length - 1] === "NORTH" && arr[i] === "SOUTH" || result[result.length - 1] === "SOUTH" && arr[i] === "NORTH" || result[result.length - 1] === "EAST" && arr[i] === "WEST" || result[result.length - 1] === "WEST" && arr[i] === "EAST"){
+                result.pop()
+            } else {
+                result.push(arr[i])
+            }
+        }
+    }
+    return result
+};
+console.log(dirReduc(['EAST', 'NORTH', "EAST"]))
+console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]));
+
+// solution 2 forEach
+function dirReduc2(arr){
+    const opposites = {'NORTH': 'SOUTH', 'EAST': 'WEST', 'SOUTH': 'NORTH', 'WEST': 'EAST'};
+    const result = []
+    arr.forEach(item => {
+        if(result.length) {
+            const prevItem = result.pop()
+            if(prevItem !== opposites[item]) {
+                result.push(prevItem)
+                result.push(item)
+            }
+        } else {
+            result.push(item)
+        }
+    })
+    return result
+};
+
+// solution 3 reduce
+function dirReduc3(arr){
+    const opposites = {'NORTH': 'SOUTH', 'EAST': 'WEST', 'SOUTH': 'NORTH', 'WEST': 'EAST'};
+    return arr.reduce((acc, cur) => (opposites[acc.slice(-1)] === cur ? acc.pop() : acc.push(cur), acc), [])
+};
